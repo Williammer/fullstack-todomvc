@@ -1,0 +1,46 @@
+<!doctype html>
+<html data-framework="vue">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fullstack todo list</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+  [v-cloak] {
+    display: none;
+  }
+  </style>
+</head>
+
+<body>
+  <section class="todoapp" v-cloak>
+    <header class="header">
+      <h1>Todo List</h1>
+      <input class="new-todo" autofocus autocomplete="off" placeholder="Add new todo here" v-model="newTodo" @keyup.enter="addTodo" />
+    </header>
+    <section class="main" v-show="todos.length">
+      <ul class="todo-list">
+        <li class="todo" v-for="todo in todos">
+          <div class="view" @click="todoClickHandler(todo)">
+            <label class="todo-date">{{todo.dueDate}}</label>
+            <label>{{todo.title}}</label>
+            <button class="destroy" @click.stop="deleteTodoById(todo.id)"></button>
+            <div class="view-details" @click.stop.prevent v-show="todo.showDetail">
+              <strong>create date:</strong>&nbsp;&nbsp; {{todo.createdDate}}
+              <br/> <strong>description:</strong>
+              <br/> {{todo.description}}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <div class="loading" v-show="isLoading">
+      <div class="spinner"></div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+  <script src="https://unpkg.com/vue@2.2.4/dist/vue.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

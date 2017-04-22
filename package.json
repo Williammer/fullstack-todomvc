@@ -1,0 +1,24 @@
+{
+  "name": "fullstack-todo-list",
+  "version": "1.0.0",
+  "description": "Fullstack todoList app with Google Calendar API",
+  "scripts": {
+    "clean": "gulp clean",
+    "start": "node server/index.js",
+    "build": "gulp && node dist/server/index.js"
+  },
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^18.0.0",
+    "open": "^0.0.5"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-minifier": "^0.2.1"
+  }
+}
