@@ -66,7 +66,6 @@
         }
 
         todo.showDetail = !todo.showDetail;
-        this.$forceUpdate(); // [optimize] may update in smaller scale
       },
 
       // GET more info of a todo/event by its id

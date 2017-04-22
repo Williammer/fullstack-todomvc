@@ -171,6 +171,7 @@ function listEvents(credentials) {
           return {
             id: event.id,
             title: event.summary,
+            showDetail: false,
             dueDate: dueDate
           }
         });
@@ -267,6 +268,7 @@ function quickAddEventByTitle(opts) {
       var simpleEventInfo = {
         id: response.id,
         title: response.summary,
+        showDetail: false,
         dueDate: dueDate
       }
 
